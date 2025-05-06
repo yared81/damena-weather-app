@@ -18,14 +18,7 @@ A beautiful weather application themed with Ethiopian colors and featuring major
    ```bash
    npm install
    ```
-3. Create a `.env` file in the root directory and add your OpenWeatherMap API key:
-   ```
-   REACT_APP_WEATHER_API_KEY=your_api_key_here
-   ```
-4. Start the development server:
-   ```bash
-   npm start
-   ```
+   
 
 ## Technologies Used
 
@@ -33,7 +26,4 @@ A beautiful weather application themed with Ethiopian colors and featuring major
 - Tailwind CSS
 - OpenWeatherMap API
 - Axios
-
-## Note
-
-You need to sign up for a free API key at [OpenWeatherMap](https://openweathermap.org/api) to use this application.
+ 
