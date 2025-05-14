@@ -17,44 +17,98 @@ const ETHIOPIAN_CITIES = [
 const WEATHER_NEWS = {
   ethiopia: [
     {
-      title: "Heavy Rainfall in Addis Ababa",
-      description: "Recent heavy rainfall causes temporary flooding in parts of the capital",
+      title: {
+        en: "Heavy Rainfall in Addis Ababa",
+        am: "በአዲስ አበባ ከባድ ዝናብ"
+      },
+      description: {
+        en: "Recent heavy rainfall causes temporary flooding in parts of the capital",
+        am: "በቅርቡ የተከሰተው ከባድ ዝናብ በከተማዋ አካታች ጊዜያዊ ውሃ መስፋፋት አስከትሏል"
+      },
       date: "2024-02-20",
-      source: "Ethiopian Meteorological Institute"
+      source: {
+        en: "Ethiopian Meteorological Institute",
+        am: "የኢትዮጵያ የአየር ሁኔታ ተቋም"
+      }
     },
     {
-      title: "Drought Conditions in Somali Region",
-      description: "Ongoing drought affecting agricultural activities in eastern Ethiopia",
+      title: {
+        en: "Drought Conditions in Somali Region",
+        am: "በሶማሌ ክልል ውስንነት"
+      },
+      description: {
+        en: "Ongoing drought affecting agricultural activities in eastern Ethiopia",
+        am: "በምስራቅ ኢትዮጵያ የሚታየው ውስንነት የአገሪቱን የሰብል ምርት እንቅስቃሴዎች ተጎድቷል"
+      },
       date: "2024-02-19",
-      source: "National Disaster Risk Management Commission"
+      source: {
+        en: "National Disaster Risk Management Commission",
+        am: "ብሔራዊ አደጋ አደጋ አስተዳደር ኮሚሽን"
+      }
     }
   ],
   africa: [
     {
-      title: "Cyclone Season in East Africa",
-      description: "Meteorologists predict active cyclone season in the Indian Ocean",
+      title: {
+        en: "Cyclone Season in East Africa",
+        am: "በምስራቅ አፍሪካ የንፋስ አውሎ ወቅት"
+      },
+      description: {
+        en: "Meteorologists predict active cyclone season in the Indian Ocean",
+        am: "የአየር ሁኔታ ባለሙያዎች በህንድ ውቅያኖስ ውስጥ ንቁ የንፋስ አውሎ ወቅት እንደሚከሰት ተንብዘዋል"
+      },
       date: "2024-02-18",
-      source: "African Climate Center"
+      source: {
+        en: "African Climate Center",
+        am: "የአፍሪካ አየር ሁኔታ ማዕከል"
+      }
     },
     {
-      title: "Record Temperatures in North Africa",
-      description: "Unusually high temperatures recorded across North African countries",
+      title: {
+        en: "Record Temperatures in North Africa",
+        am: "በሰሜን አፍሪካ የተመዘገቡ የሙቀት መጠኖች"
+      },
+      description: {
+        en: "Unusually high temperatures recorded across North African countries",
+        am: "በሰሜን አፍሪካ አገሮች ላይ ያልተለመዱ ከፍተኛ የሙቀት መጠኖች ተመዝግበዋል"
+      },
       date: "2024-02-17",
-      source: "African Union Climate Division"
+      source: {
+        en: "African Union Climate Division",
+        am: "የአፍሪካ ህብረት የአየር ሁኔታ ክፍል"
+      }
     }
   ],
   world: [
     {
-      title: "Global Climate Change Impact",
-      description: "New report highlights increasing weather extremes worldwide",
+      title: {
+        en: "Global Climate Change Impact",
+        am: "የአለም አቀፍ የአየር ሁኔታ ለውጥ ተጽእኖ"
+      },
+      description: {
+        en: "New report highlights increasing weather extremes worldwide",
+        am: "አዲስ ሪፖርት በዓለም ላይ እየጨመረ የሚሄደውን የአየር ሁኔታ ከፍተኛ ለውጦች አፅንኦት ሰጥቷል"
+      },
       date: "2024-02-16",
-      source: "World Meteorological Organization"
+      source: {
+        en: "World Meteorological Organization",
+        am: "የዓለም የአየር ሁኔታ ድርጅት"
+      }
     },
     {
-      title: "Arctic Weather Patterns",
-      description: "Changing Arctic conditions affecting global weather systems",
+      title: {
+        en: "Arctic Weather Patterns",
+        am: "የአርክቲክ የአየር ሁኔታ ባህሪያት"
+      },
+      description: {
+        en: "Changing Arctic conditions affecting global weather systems",
+        am: "የሚቀየሩ የአርክቲክ ሁኔታዎች የዓለም አቀፍ የአየር ሁኔታ ስርዓቶችን ተጎድተዋል"
+      },
       date: "2024-02-15",
-      source: "International Climate Research Center"
+      source: {
+        en: "International Climate Research Center",
+        am: "ዓለም አቀፍ የአየር ሁኔታ ምርምር ማዕከል"
+      }
     }
   ]
 };
@@ -81,7 +135,39 @@ const TRANSLATIONS = {
     stayHydrated: "Stay hydrated during hot weather",
     carryUmbrella: "Carry an umbrella during rainy season",
     checkUV: "Check UV index before outdoor activities",
-    switchTo: "Switch to"
+    switchTo: "Switch to",
+    weatherDescriptions: {
+      'Clear': 'Clear sky',
+      'Clouds': 'Cloudy',
+      'Rain': 'Rainy',
+      'Drizzle': 'Light rain',
+      'Thunderstorm': 'Thunderstorm',
+      'Snow': 'Snowy',
+      'Mist': 'Misty',
+      'Fog': 'Foggy',
+      'Haze': 'Hazy',
+      'Smoke': 'Smoky',
+      'Dust': 'Dusty',
+      'Sand': 'Sandy',
+      'Ash': 'Ashy',
+      'Squall': 'Squally',
+      'Tornado': 'Tornado',
+      'scattered clouds': 'Scattered clouds',
+      'overcast clouds': 'Overcast clouds',
+      'broken clouds': 'Broken clouds',
+      'few clouds': 'Few clouds',
+      'light rain': 'Light rain',
+      'moderate rain': 'Moderate rain',
+      'heavy rain': 'Heavy rain',
+      'light snow': 'Light snow',
+      'moderate snow': 'Moderate snow',
+      'heavy snow': 'Heavy snow'
+    },
+    newsCategories: {
+      ethiopia: 'Ethiopia',
+      africa: 'Africa',
+      world: 'World'
+    }
   },
   am: {
     appName: "ዳመና",
@@ -104,7 +190,39 @@ const TRANSLATIONS = {
     stayHydrated: "በሙቀት ወቅት በቂ ውሃ ይጠጡ",
     carryUmbrella: "በዝናብ ወቅት ጃንጥላ ይዘው ይሂዱ",
     checkUV: "የውጪ እንቅስቃሴዎችን ከመጀመርዎ በፊት UV መረጃውን ያረጋግጡ",
-    switchTo: "ወደ"
+    switchTo: "ወደ",
+    weatherDescriptions: {
+      'Clear': 'ንጹህ ሰማይ',
+      'Clouds': 'ደመናማ',
+      'Rain': 'ዝናባማ',
+      'Drizzle': 'ቀላል ዝናብ',
+      'Thunderstorm': 'ንዝረት',
+      'Snow': 'በረዶ',
+      'Mist': 'አጋዝም',
+      'Fog': 'አጋዝም',
+      'Haze': 'አጋዝም',
+      'Smoke': 'ትኳሽ',
+      'Dust': 'ዱብ',
+      'Sand': 'አሸዋማ',
+      'Ash': 'አመድ',
+      'Squall': 'ንፋስ',
+      'Tornado': 'ንፋስ አውሎ',
+      'scattered clouds': 'በተለያዩ ቦታዎች ደመና',
+      'overcast clouds': 'የተሞሉ ደመናዎች',
+      'broken clouds': 'ተሰባባሪ ደመናዎች',
+      'few clouds': 'ጥቂት ደመናዎች',
+      'light rain': 'ቀላል ዝናብ',
+      'moderate rain': 'መካከለኛ ዝናብ',
+      'heavy rain': 'ከባድ ዝናብ',
+      'light snow': 'ቀላል በረዶ',
+      'moderate snow': 'መካከለኛ በረዶ',
+      'heavy snow': 'ከባድ በረዶ'
+    },
+    newsCategories: {
+      ethiopia: 'ኢትዮጵያ',
+      africa: 'አፍሪካ',
+      world: 'ዓለም'
+    }
   }
 };
 
@@ -311,7 +429,7 @@ function WeatherApp() {
                       </button>
                     </div>
                     <p className="text-slate-200 mb-4 capitalize">
-                      {weather.weather[0].description}
+                      {TRANSLATIONS[language].weatherDescriptions[weather.weather[0].main]}
                     </p>
                     <div className="grid grid-cols-2 gap-4 text-sm">
                       <div className="bg-slate-700/50 p-3 rounded-lg">
@@ -347,7 +465,7 @@ function WeatherApp() {
                         return (
                           <div key={item.dt} className="text-center bg-slate-700/50 p-2 rounded-lg hover:bg-slate-700 transition-colors duration-300">
                             <p className="text-sm text-slate-300">
-                              {date.toLocaleDateString('en-US', { weekday: 'short' })}
+                              {date.toLocaleDateString(language === 'en' ? 'en-US' : 'am-ET', { weekday: 'short' })}
                             </p>
                             <p className="text-2xl mb-1">
                               {getWeatherIcon(item.weather[0].main)}
@@ -356,7 +474,7 @@ function WeatherApp() {
                               {convertTemperature(item.main.temp)}°{isCelsius ? 'C' : 'F'}
                             </p>
                             <p className="text-xs text-slate-300">
-                              {item.weather[0].description}
+                              {TRANSLATIONS[language].weatherDescriptions[item.weather[0].description.toLowerCase()] || item.weather[0].description}
                             </p>
                           </div>
                         );
@@ -379,7 +497,7 @@ function WeatherApp() {
                         : 'bg-slate-700/50 text-slate-300 hover:bg-slate-700'
                     }`}
                   >
-                    Ethiopia
+                    {TRANSLATIONS[language].newsCategories.ethiopia}
                   </button>
                   <button
                     onClick={() => setActiveNewsTab('africa')}
@@ -389,7 +507,7 @@ function WeatherApp() {
                         : 'bg-slate-700/50 text-slate-300 hover:bg-slate-700'
                     }`}
                   >
-                    Africa
+                    {TRANSLATIONS[language].newsCategories.africa}
                   </button>
                   <button
                     onClick={() => setActiveNewsTab('world')}
@@ -399,7 +517,7 @@ function WeatherApp() {
                         : 'bg-slate-700/50 text-slate-300 hover:bg-slate-700'
                     }`}
                   >
-                    World
+                    {TRANSLATIONS[language].newsCategories.world}
                   </button>
                 </div>
                 <div className="space-y-4">
@@ -407,14 +525,14 @@ function WeatherApp() {
                     return (
                       <div key={index} className="bg-slate-700/50 rounded-lg p-4 hover:bg-slate-700 transition-colors duration-300">
                         <h4 className="font-bold text-white mb-2">
-                          {news.title}
+                          {news.title[language]}
                         </h4>
                         <p className="text-slate-200 text-sm mb-2">
-                          {news.description}
+                          {news.description[language]}
                         </p>
                         <div className="flex justify-between text-xs text-slate-400">
                           <span>{news.date}</span>
-                          <span>{news.source}</span>
+                          <span>{news.source[language]}</span>
                         </div>
                       </div>
                     );
