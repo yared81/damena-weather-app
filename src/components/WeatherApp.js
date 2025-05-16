@@ -2,16 +2,16 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const ETHIOPIAN_CITIES = [
-  'Addis Ababa',
-  'Bahir Dar',
-  'Gondar',
-  'Mekelle',
-  'Hawassa',
-  'Dire Dawa',
-  'Jimma',
-  'Adama',
-  'Harar',
-  'Dessie'
+  { en: 'Addis Ababa', am: 'አዲስ አበባ' },
+  { en: 'Bahir Dar', am: 'ባሕር ዳር' },
+  { en: 'Gondar', am: 'ጎንደር' },
+  { en: 'Mekelle', am: 'መቀሌ' },
+  { en: 'Hawassa', am: 'ሀዋሳ' },
+  { en: 'Dire Dawa', am: 'ድሬ ዳዋ' },
+  { en: 'Jimma', am: 'ጅማ' },
+  { en: 'Adama', am: 'አዳማ' },
+  { en: 'Harar', am: 'ሐረር' },
+  { en: 'Dessie', am: 'ደሴ' }
 ];
 
 const WEATHER_NEWS = {
@@ -33,12 +33,12 @@ const WEATHER_NEWS = {
     },
     {
       title: {
-        en: "Drought Conditions in Somali Region",
-        am: "በሶማሌ ክልል ውስንነት"
+        en: "Flooding in Somali Region",
+        am: "በሶማሌ ክልል ውሃ መስፋፋት"
       },
       description: {
-        en: "Ongoing drought affecting agricultural activities in eastern Ethiopia",
-        am: "በምስራቅ ኢትዮጵያ የሚታየው ውስንነት የአገሪቱን የሰብል ምርት እንቅስቃሴዎች ተጎድቷል"
+        en: "Flooding in eastern Ethiopia affecting agricultural activities",
+        am: "በምስራቅ ኢትዮጵያ የሚታየው ውሃ መስፋፋት የአገሪቱን የሰብል ምርት እንቅስቃሴዎች ተጎድቷል"
       },
       date: "2024-02-19",
       source: {
@@ -97,14 +97,14 @@ const WEATHER_NEWS = {
     },
     {
       title: {
-        en: "Arctic Weather Patterns",
-        am: "የአርክቲክ የአየር ሁኔታ ባህሪያት"
+        en: "Global Warming",
+        am: "የአለም ሙቀት መጨመር"
       },
       description: {
-        en: "Changing Arctic conditions affecting global weather systems",
-        am: "የሚቀየሩ የአርክቲክ ሁኔታዎች የዓለም አቀፍ የአየር ሁኔታ ስርዓቶችን ተጎድተዋል"
+        en: " ",
+        am: "የአለም ሙቀት መጨመር አሳሳቢ ደረጃ ደርሷል ተባለተባለ "
       },
-      date: "2024-02-15",
+      date: "20255-02-15",
       source: {
         en: "International Climate Research Center",
         am: "ዓለም አቀፍ የአየር ሁኔታ ምርምር ማዕከል"
@@ -130,11 +130,11 @@ const TRANSLATIONS = {
     quickLinks: "Quick Links",
     contactUs: "Contact Us",
     followUs: "Follow Us",
-    aboutUsText: "Damena provides accurate weather forecasts and updates for cities across Ethiopia.",
+    aboutUsText: "Damena provides accurate weather forecasts and updates for cities across Ethiopia. THank you for choosing US!",
     copyright: "All rights reserved.",
     stayHydrated: "Stay hydrated during hot weather",
     carryUmbrella: "Carry an umbrella during rainy season",
-    checkUV: "Check UV index before outdoor activities",
+    checkUV: "Check weather conditions before outdoor activities",
     switchTo: "Switch to",
     weatherDescriptions: {
       'Clear': 'Clear sky',
@@ -185,11 +185,11 @@ const TRANSLATIONS = {
     quickLinks: "ፈጣን አገናኞች",
     contactUs: "ያግኙን",
     followUs: "ተከተሉን",
-    aboutUsText: "ዳመና በኢትዮጵያ ውስጥ በተለያዩ ከተሞች ላይ ትክክለኛ የአየር ሁኔታ ትንበያዎችን እና ዜናዎችን ያቀርባል።",
+    aboutUsText: "ዳመና በኢትዮጵያ ውስጥ በተለያዩ ከተሞች ላይ ትክክለኛ የአየር ሁኔታ ትንበያዎችን እና ዜናዎችን ያቀርባል። ስለመረጡን እናመሰግናለን።",
     copyright: "መብቱ በህግ የተጠበቀ ነው።",
     stayHydrated: "በሙቀት ወቅት በቂ ውሃ ይጠጡ",
     carryUmbrella: "በዝናብ ወቅት ጃንጥላ ይዘው ይሂዱ",
-    checkUV: "የውጪ እንቅስቃሴዎችን ከመጀመርዎ በፊት UV መረጃውን ያረጋግጡ",
+    checkUV: "የውጪ እንቅስቃሴዎችን ከመጀመርዎ በፊት የአየር ሁኔታውን ያረጋግጡ",
     switchTo: "ወደ",
     weatherDescriptions: {
       'Clear': 'ንጹህ ሰማይ',
@@ -251,8 +251,8 @@ function WeatherApp() {
     setError(null);
 
     const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
-    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${ETHIOPIAN_CITIES[cityIndex]}&appid=${apiKey}&units=metric`;
-    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${ETHIOPIAN_CITIES[cityIndex]}&appid=${apiKey}&units=metric`;
+    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${ETHIOPIAN_CITIES[cityIndex].en}&appid=${apiKey}&units=metric`;
+    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${ETHIOPIAN_CITIES[cityIndex].en}&appid=${apiKey}&units=metric`;
 
     Promise.all([
       axios.get(weatherUrl),
@@ -387,8 +387,8 @@ function WeatherApp() {
                     >
                       ←
                     </button>
-                    <h2 className="text-2xl font-bold text-white">
-                      {ETHIOPIAN_CITIES[cityIndex]}
+                    <h2 className="text-2xl font-bold text-white text-center">
+                      {language === 'en' ? ETHIOPIAN_CITIES[cityIndex].en : ETHIOPIAN_CITIES[cityIndex].am}
                     </h2>
                     <button
                       onClick={handleNextCity}
@@ -589,9 +589,15 @@ function WeatherApp() {
               <div>
                 <h3 className="text-xl font-semibold text-white mb-4">{TRANSLATIONS[language].contactUs}</h3>
                 <ul className="space-y-2">
-                  <li className="text-slate-300 text-base">Email: info@damena.com</li>
-                  <li className="text-slate-300 text-base">Phone: +251 11 123 4567</li>
-                  <li className="text-slate-300 text-base">Address: Addis Ababa, Ethiopia</li>
+                  <li className="text-slate-300 text-base">
+                    {language === 'en' ? 'Email: ' : 'ኢሜል፡ '}info@damena.com
+                  </li>
+                  <li className="text-slate-300 text-base">
+                    {language === 'en' ? 'Phone: ' : 'ስልክ፡ '}+251 11 123 4567
+                  </li>
+                  <li className="text-slate-300 text-base">
+                    {language === 'en' ? 'Address: Bahir Dar, Amhara, Ethiopia' : 'አድራሻ፡ ባሕር ዳር አማራ ኢትዮጵያ'}
+                  </li>
                 </ul>
               </div>
               <div>
