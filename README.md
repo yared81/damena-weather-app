@@ -26,4 +26,3 @@ A beautiful weather application themed with Ethiopian colors and featuring major
 - Tailwind CSS
 - OpenWeatherMap API
 - Axios
- 
